@@ -1,0 +1,57 @@
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+// 全局模板样式
+.main-con {
+  .page-con {
+    .templete-content {
+      padding: 0 20px;
+      &-title {
+        margin-bottom: 20px;
+      }
+      &-body {
+        margin-bottom: 20px;
+        &-content {
+          &__fixed {
+            position: fixed;
+            top: 16px;
+            right: 200px;
+            z-index: 999;
+          }
+          margin-bottom: 20px;
+          &-title {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 0;
+            &::before {
+              content: ' ';
+              display: inline-block;
+              height: 24px;
+              width: 3px;
+              margin-right: 8px;
+              background: red;
+              vertical-align: bottom;
+            }
+          }
+        }
+      }
+      &-footer {
+        // padding: 20px;
+      }
+    }
+  }
+}
+
+.hidden-input {
+  visibility: hidden;
+}
