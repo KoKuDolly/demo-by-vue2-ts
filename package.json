@@ -8,7 +8,8 @@
     "build:test": "vue-cli-service build --mode test",
     "build:prod": "vue-cli-service build --mode prod",
     "lint": "vue-cli-service lint",
-    "node:server": "nodemon ./server/index.js"
+    "node:server": "nodemon ./server/index.js & vue-cli-service serve --mode test",
+    "start": "yarn node:server"
   },
   "dependencies": {
     "@types/qs": "^6.5.3",
