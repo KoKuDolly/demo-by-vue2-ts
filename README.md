@@ -1,4 +1,4 @@
-# br-account-info
+# info-plat
 
 ## Project setup
 ```
