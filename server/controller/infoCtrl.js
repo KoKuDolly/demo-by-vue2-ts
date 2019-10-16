@@ -40,15 +40,13 @@ const cidDataEmpty = {
 module.exports = {
   handleCompanyList(req, res) {
     const initData = {
-      cid: '',
-      area: '',
-      companyName: '',
-      companyAbbreviation: '',
-      businesserName: '',
-      riskerName: '',
-      financialLicenceType: '',
-      financialSublicenseType: '',
-      isLicensed: '',
+      cid: 'cid',
+      companyName: '公司名称',
+      companyNameAbbr: '公司简称',
+      apiCode: 'apiCode',
+      formStatus: '表单状态',
+      createPerson: '创建者',
+      createTime: '创建时间',
     }
 
     let perData = {}
@@ -57,7 +55,7 @@ module.exports = {
       perData = {
         ...perData,
         ...Mock.mock({
-          [`${key}|1-100.1-100`]: 1,
+          [`${key}|2`]: initData,
         })
       }
     }
@@ -68,9 +66,21 @@ module.exports = {
     }
     res.json({
       code: '000000',
-      data,
-      message: 'success'
+      data: {
+        records: data,
+        total: data.length,
+      },
+      message: '000000'
     })
+  },
+  handleInfoDetail(req, res) {
+    res.json({
+      code: '000000',
+      data: {
+
+      },
+      message: 'success'
+    });
   }
 }
 

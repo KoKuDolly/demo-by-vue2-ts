@@ -21,7 +21,7 @@ export const companyList = (payLoad: any) => {
 export const apiCodeCheck = (payLoad: any) => {
   return new Promise((resolve, reject) => {
     axiosFun({
-      url: API_PRE + URL_PRE + 'company/apicode/detail',
+      url: API_PRE + URL_PRE + '/company/apicode/detail',
       method: 'post',
       data: payLoad.data,
     }).then((res: any) => {
@@ -35,7 +35,7 @@ export const apiCodeCheck = (payLoad: any) => {
 export const apiCodeSave = (payLoad: any) => {
   return new Promise((resolve, reject) => {
     axiosFun({
-      url: API_PRE + URL_PRE + 'company/apicode/save',
+      url: API_PRE + URL_PRE + '/company/apicode/save',
       method: 'post',
       data: payLoad.data,
       // isJsonStringify: true,
@@ -53,7 +53,7 @@ export const apiCodeSave = (payLoad: any) => {
 export const paizhaoTypeCankao = (payLoad: any) => {
   return new Promise((resolve, reject) => {
     axiosFun({
-      url: API_PRE + URL_PRE + 'amount/organization/list',
+      url: API_PRE + URL_PRE + '/amount/organization/list',
       method: 'post',
       data: payLoad.data,
     }).then((res: any) => {

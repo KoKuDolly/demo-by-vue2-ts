@@ -31,7 +31,6 @@
       </div>
     </div>
     <div class="templete-content-body">
-      <!-- {{end2frontMap}} -->
       <div class="templete-content-body-content">
         <!-- <el-upload
           class="upload-info-list"
@@ -46,15 +45,15 @@
         <el-button size="small" type="primary" class="upload-info-btn" icon="el-icon-upload" @click.native="handleUpload">上传</el-button>
         <input type="file" class="hidden-input" /> -->
         <el-table :data="tableData">
-          <el-table-column :prop="`${end2frontMap.cid}`" label="cid"></el-table-column>
-          <el-table-column :prop="`${end2frontMap.firmName}`" label="公司名称"></el-table-column>
-          <el-table-column :prop="`${end2frontMap.accountName}`" label="公司简称"></el-table-column>
-          <el-table-column :prop="`${end2frontMap.apiCode}`" label="apiCode"></el-table-column>
-          <el-table-column :prop="`${end2frontMap.formStatus}`" label="表单状态">
-            <template slot-scope="scope"><div>{{forStatusMap[scope.row.formStatus]}}</div></template>
+          <el-table-column prop="cid" label="cid"></el-table-column>
+          <el-table-column prop="companyName" label="公司名称"></el-table-column>
+          <el-table-column prop="companyNameAbbr" label="公司简称"></el-table-column>
+          <el-table-column prop="apiCode" label="apiCode"></el-table-column>
+          <el-table-column prop="formStatus" label="表单状态">
+            <!-- <template slot-scope="scope"><div>{{forStatusMap[scope.row.formStatus]}}</div></template> -->
           </el-table-column>
-          <el-table-column :prop="`${end2frontMap.createUser}`" label="创建者"></el-table-column>
-          <el-table-column :prop="`${end2frontMap.createTime}`" label="创建时间"></el-table-column>
+          <el-table-column prop="createPerson" label="创建者"></el-table-column>
+          <el-table-column prop="createTime" label="创建时间"></el-table-column>
           <el-table-column prop="操作" label="操作">
             <template slot-scope="scope">
               <el-button size="small" type="text" @click="check(scope)">查看</el-button>
@@ -162,10 +161,15 @@ export default class InfoList extends Vue {
     this.companyListActions(param)
     .then((res) => {
       // console.log(res);
-      this.tableData = res.data.data.records || [];
-      this.pageTotal = res.data.data.total || 0;
+      this.tableData = res.data.records || [];
+      this.pageTotal = res.data.total || 0;
     })
     .catch((err) => {
+      // console.log(err);
+      this.$message({
+        message: err.message + '!的消息',
+        type: 'error',
+      });
       this.tableData = [];
       this.pageTotal = 0;
     });

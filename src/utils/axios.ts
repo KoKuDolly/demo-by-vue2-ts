@@ -25,17 +25,16 @@ instance.interceptors.response.use((response: any) => {
   // Any status code that lie within the range of 2xx cause this function to trigger
   // Do something with response data
   const code = response.data.code;
+  const data = response.data;
   switch (code) {
     case '000000':
-      return response;
+      return data;
     case '100013': // session 过期
-      // location.href = '//enterpriseop.100credit.com/login';
       auth.logOut();
       break;
     default: // 其他报错
-      return Promise.reject(response);
+      return Promise.reject(data);
   }
-  return response;
 }, (error: any) => {
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
@@ -57,12 +56,10 @@ const axiosFun = (options: any) => {
   };
   return instance(config)
     .then((response: any) => {
-      // console.log(response);
-      return response;
+      return Promise.resolve(response);
     })
     .catch((error: any) => {
-      // console.log(error);
-      return error;
+      return Promise.reject(error);
     });
 };
 

@@ -14,5 +14,8 @@ router
   .post('/api/company/list', (req, res) => {
     infoCtrl.handleCompanyList(req, res)
   })
+  .post('/api/company/apicode/detail', (req, res) => {
+    infoCtrl.handleInfoDetail(req, res)
+  })
 
 module.exports = router

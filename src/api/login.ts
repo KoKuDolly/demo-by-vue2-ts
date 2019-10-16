@@ -7,7 +7,7 @@ const URL_PRE = BASE_API.urlPre;
 export const login = (payLoad: any) => {
   return new Promise((resolve, reject) => {
     axiosFun({
-      url: API_PRE + URL_PRE + 'login.do',
+      url: API_PRE + URL_PRE + '/login.do',
       method: 'post',
       data: payLoad.data,
     }).then((res: any) => {
@@ -22,7 +22,7 @@ export const login = (payLoad: any) => {
 export const logout = () => {
   return new Promise((resolve, reject) => {
     axiosFun({
-      url: API_PRE + URL_PRE + 'loginOut',
+      url: API_PRE + URL_PRE + '/loginOut',
       method: 'post',
     }).then((res: any) => {
       resolve(res);
