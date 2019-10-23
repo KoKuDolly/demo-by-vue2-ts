@@ -1,0 +1,10 @@
+{
+  "name": "koa-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "jiajun.qin",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.10.0"
+  }
+}

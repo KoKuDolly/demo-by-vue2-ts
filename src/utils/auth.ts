@@ -15,7 +15,7 @@ export const auth = {
   logOut() {
     localStorage.removeItem(auth.USER_KEY);
     localStorage.removeItem(auth.SESSION_ID);
-    window.location.replace(casUrl);
+    // window.location.replace(casUrl);
   },
   destroy() {
     localStorage.removeItem(auth.USER_KEY);

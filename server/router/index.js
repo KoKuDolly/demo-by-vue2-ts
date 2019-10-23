@@ -12,6 +12,7 @@ router
     indexCtrl.handleReport(req, res)
   })
   .post('/api/company/list', (req, res) => {
+    console.log('leave')
     infoCtrl.handleCompanyList(req, res)
   })
   .post('/api/company/apicode/detail', (req, res) => {
