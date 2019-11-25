@@ -47,7 +47,11 @@ export default class Layout extends Vue {
   // }
 
   public mounted() {
-    this.loginByCas();
+    if (process.env.VUE_APP_ISCAS === 'notcas') {
+       this.isLogin = true;
+    } else {
+      this.loginByCas();
+    }
   }
 
   public loginByCas() {

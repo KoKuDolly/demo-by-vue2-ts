@@ -46,15 +46,16 @@ export default class Header extends Vue {
 
   public mounted() {
     // this.userInfoFromLocale = auth.getUserInfo();
+    console.log(auth.getUserInfo())
     this.userName = auth.getUserInfo().name;
   }
 
   public handleUserQuit() {
     this.userQuitAction()
       .then((res) => {
-        if (res.data.code === '000000') {
+        if (res.code === '000000') {
           auth.logOut();
-          // this.$router.push({ name: 'login' });
+          this.$router.push({ name: 'login' });
         }
       })
       .catch();

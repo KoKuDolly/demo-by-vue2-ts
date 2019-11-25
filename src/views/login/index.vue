@@ -38,11 +38,16 @@ export default class Login extends Vue {
   };
 
   public handleLogin() {
-    this.loginAction({data: '111'})
+    this.loginAction({data: this.formData})
       .then((res) => {
         this.$router.push('/');
       })
-      .catch();
+      .catch((err) => {
+        this.$message({
+          message: err.message,
+          type: 'error',
+        });
+      });
   }
 }
 </script>

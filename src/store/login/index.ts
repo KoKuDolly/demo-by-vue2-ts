@@ -40,16 +40,16 @@ export default {
   },
   mutations: {
     loginSuccess(state: InterfaceState, res: any) {
-      state.userInfo = res.data.data.userInfo;
+      state.userInfo = res.data.userInfo;
       auth.register(state.userInfo);
-      auth.saveSessionId(res.data.data.sessionId);
+      auth.saveSessionId(res.data.sessionId);
     },
   },
   actions: {
     loginAction(context: ActionContext<any, any>, data: Payload) {
       return new Promise((resolve, reject) => {
         login(data).then((res: any) => {
-          if (res.data.code === '000000') {
+          if (res.code === '000000') {
             context.commit('loginSuccess', res);
             resolve(res);
           } else {

@@ -11,11 +11,11 @@ router
   .get('/api/approval-service/examine/report', (req, res) => {
     indexCtrl.handleReport(req, res)
   })
-  .post('/api/company/list', (req, res) => {
+  .post('/company/list', (req, res) => {
     console.log('leave')
     infoCtrl.handleCompanyList(req, res)
   })
-  .post('/api/company/apicode/detail', (req, res) => {
+  .post('/company/apicode/detail', (req, res) => {
     infoCtrl.handleInfoDetail(req, res)
   })
 
