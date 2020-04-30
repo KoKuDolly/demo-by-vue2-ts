@@ -46,7 +46,7 @@ export default class Header extends Vue {
 
   public mounted() {
     // this.userInfoFromLocale = auth.getUserInfo();
-    console.log(auth.getUserInfo())
+    // console.log(auth.getUserInfo())
     this.userName = auth.getUserInfo().name;
   }
 

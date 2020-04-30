@@ -39,6 +39,20 @@ const cidDataEmpty = {
 
 module.exports = {
   handleCompanyList(req, res) {
+    console.log(req.body)
+    const { cid = '',
+      apiCode = '',
+      operatorName = '',
+      formStatus = '',
+      current = '1',
+      pageSize = '10'
+    } = req.body
+    console.log(cid,
+      apiCode,
+      operatorName,
+      formStatus,
+      current,
+      pageSize)
     const initData = {
       cid: 'cid',
       companyName: '公司名称',

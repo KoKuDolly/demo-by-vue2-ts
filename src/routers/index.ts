@@ -22,7 +22,7 @@ router.beforeEach((to, from, next) => {
     background: 'rgba(0, 0, 0, 0.3)',
   });
   // console.log(to, auth.isLoginIn())
-  console.log(process.env.VUE_APP_ISCAS, to)
+  // console.log(process.env.VUE_APP_ISCAS, to)
   if (process.env.VUE_APP_ISCAS === 'notcas') { // 非cas跳转
     if (to.name !== 'login' && !auth.isLoginIn()) {
       next('/login');
